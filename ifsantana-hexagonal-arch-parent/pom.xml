@@ -16,10 +16,12 @@
 
   <modules>
     <module>ports/hexagonal-arch-api</module>
+    <module>ports/hexagonal-arch-bus-listeners</module>
     <module>core/hexagonal-arch-domain</module>
     <module>common/hexagonal-arch-messages</module>
     <module>core/hexagonal-arch-application</module>
     <module>adapters/hexagonal-arch-mongodb</module>
+    <module>adapters/hexagonal-arch-pgsql</module>
   </modules>
 
 </project>
