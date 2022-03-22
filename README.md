@@ -21,7 +21,7 @@ description
 
 ## Pros and Cons
 
-## PROS
+### PROS
 
 1. Testability
 2. Maintainability
@@ -29,14 +29,14 @@ description
 4. Immunity to Technology Evolution
 5. Delay Technical Decisions
 
-## CONS
+### CONS
 
 1. Complexity
 2. Build Process Performance
 3. Indirection and Mappings
 
 
-## Reference
+## References
 
 ### [1] Alistair Cockburn Article -  Ports And Adapters Architecture
 
