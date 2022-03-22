@@ -22,6 +22,8 @@
     <module>core/hexagonal-arch-application</module>
     <module>adapters/hexagonal-arch-mongodb</module>
     <module>adapters/hexagonal-arch-pgsql</module>
+    <module>hexagonal-arch-</module>
+    <module>hexagonal-arch-cross-cutting</module>
   </modules>
 
 </project>
