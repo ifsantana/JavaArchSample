@@ -45,3 +45,7 @@ http://wiki.c2.com/?PortsAndAdaptersArchitecture
 ### [2] Juan Manuel Garrido de Paz Article - Ports and Adapters Pattern (Hexagonal Architecture)
 
 https://jmgarridopaz.github.io/content/hexagonalarchitecture.html#tc6-2-3
+
+### [3] Netflix - Ready for changes with Hexagonal Architecture
+
+https://netflixtechblog.com/ready-for-changes-with-hexagonal-architecture-b315ec967749
