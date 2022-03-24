@@ -8,8 +8,6 @@ import com.ifsantana.hexagonalarchapi.controllers.user.v1.responses.CreateUserRe
 import io.swagger.v3.oas.annotations.Operation;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.util.Random;
-import java.util.UUID;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
