@@ -25,6 +25,7 @@
     <module>adapters/hexagonal-arch-external-api-client</module>
     <module>common/hexagonal-arch-cross-cutting</module>
     <module>common/hexagonal-arch-messages</module>
+    <module>adapters/hexagonal-arch-redis</module>
   </modules>
 
 </project>
