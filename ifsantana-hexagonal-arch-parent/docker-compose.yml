@@ -15,7 +15,7 @@ services:
   mongodb:
     image: mongo:4.2.11
     volumes:
-      - ./localdev/mongo:/docker-entrypoint-initdb.d
+      - ./adapters/hexagonal-arch-mongodb/localdev/mongo:/docker-entrypoint-initdb.d
     ports:
       - 27017:27017
 
