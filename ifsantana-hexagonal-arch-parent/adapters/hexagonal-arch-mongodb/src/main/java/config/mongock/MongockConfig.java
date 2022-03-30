@@ -4,6 +4,7 @@ import com.mongodb.ReadConcern;
 import com.mongodb.ReadPreference;
 import com.mongodb.TransactionOptions;
 import com.mongodb.WriteConcern;
+import config.AppMongoConfig;
 import io.mongock.api.config.MongockConfiguration;
 import io.mongock.driver.mongodb.springdata.v3.SpringDataMongoV3Driver;
 import io.mongock.runner.springboot.EnableMongock;
@@ -15,12 +16,14 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.mongodb.MongoTransactionManager;
 import org.springframework.data.mongodb.core.MongoTemplate;
 
 @EnableMongock
 @Configuration
+@ComponentScan(basePackageClasses = AppMongoConfig.class)
 public class MongockConfig {
 
   @Value("${config.mongock.is-enabled}")
