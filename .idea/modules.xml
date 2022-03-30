@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ifsantana-hexagonal-arch-parent/ports/hexagonal-arch-api/hexagonal-arch-api.iml" filepath="$PROJECT_DIR$/ifsantana-hexagonal-arch-parent/ports/hexagonal-arch-api/hexagonal-arch-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ifsantana-hexagonal-arch-parent/core/hexagonal-arch-application/hexagonal-arch-application.iml" filepath="$PROJECT_DIR$/ifsantana-hexagonal-arch-parent/core/hexagonal-arch-application/hexagonal-arch-application.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ifsantana-hexagonal-arch-parent/ports/hexagonal-arch-bus-listeners/hexagonal-arch-bus-listeners.iml" filepath="$PROJECT_DIR$/ifsantana-hexagonal-arch-parent/ports/hexagonal-arch-bus-listeners/hexagonal-arch-bus-listeners.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ifsantana-hexagonal-arch-parent/common/hexagonal-arch-cross-cutting/hexagonal-arch-cross-cutting.iml" filepath="$PROJECT_DIR$/ifsantana-hexagonal-arch-parent/common/hexagonal-arch-cross-cutting/hexagonal-arch-cross-cutting.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ifsantana-hexagonal-arch-parent/core/hexagonal-arch-domain/hexagonal-arch-domain.iml" filepath="$PROJECT_DIR$/ifsantana-hexagonal-arch-parent/core/hexagonal-arch-domain/hexagonal-arch-domain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ifsantana-hexagonal-arch-parent/adapters/hexagonal-arch-external-api-client/hexagonal-arch-external-api-client.iml" filepath="$PROJECT_DIR$/ifsantana-hexagonal-arch-parent/adapters/hexagonal-arch-external-api-client/hexagonal-arch-external-api-client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ifsantana-hexagonal-arch-parent/common/hexagonal-arch-messages/hexagonal-arch-messages.iml" filepath="$PROJECT_DIR$/ifsantana-hexagonal-arch-parent/common/hexagonal-arch-messages/hexagonal-arch-messages.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ifsantana-hexagonal-arch-parent/adapters/hexagonal-arch-mongodb/hexagonal-arch-mongodb.iml" filepath="$PROJECT_DIR$/ifsantana-hexagonal-arch-parent/adapters/hexagonal-arch-mongodb/hexagonal-arch-mongodb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ifsantana-hexagonal-arch-parent/adapters/hexagonal-arch-pgsql/hexagonal-arch-pgsql.iml" filepath="$PROJECT_DIR$/ifsantana-hexagonal-arch-parent/adapters/hexagonal-arch-pgsql/hexagonal-arch-pgsql.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ifsantana-hexagonal-arch-parent/adapters/hexagonal-arch-publisher/hexagonal-arch-publisher.iml" filepath="$PROJECT_DIR$/ifsantana-hexagonal-arch-parent/adapters/hexagonal-arch-publisher/hexagonal-arch-publisher.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ifsantana-hexagonal-arch-parent/adapters/hexagonal-arch-redis/hexagonal-arch-redis.iml" filepath="$PROJECT_DIR$/ifsantana-hexagonal-arch-parent/adapters/hexagonal-arch-redis/hexagonal-arch-redis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ifsantana-hexagonal-arch-parent/ifsantana-hexagonal-arch-parent.iml" filepath="$PROJECT_DIR$/ifsantana-hexagonal-arch-parent/ifsantana-hexagonal-arch-parent.iml" />
+    </modules>
+  </component>
+</project>
