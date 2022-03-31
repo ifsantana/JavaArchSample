@@ -4,12 +4,12 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <parent>
     <artifactId>ifsantana-hexagonal-arch-parent</artifactId>
-    <groupId>org.example</groupId>
+    <groupId>com.ifsantana</groupId>
     <version>1.0-SNAPSHOT</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
 
-  <artifactId>hexagonal-arch-bus-listeners</artifactId>
+  <artifactId>hexagonal-arch-com.ifsantana.hexagonal.crosscutting.bus-listeners</artifactId>
 
   <properties>
     <maven.compiler.source>17</maven.compiler.source>

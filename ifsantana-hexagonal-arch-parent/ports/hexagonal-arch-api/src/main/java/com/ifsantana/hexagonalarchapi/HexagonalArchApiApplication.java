@@ -6,7 +6,7 @@ import org.springframework.hateoas.config.EnableHypermediaSupport;
 import org.springframework.hateoas.config.EnableHypermediaSupport.HypermediaType;
 import org.springframework.hateoas.support.WebStack;
 
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = "com.ifsantana")
 @EnableHypermediaSupport(type = HypermediaType.HAL, stacks = WebStack.WEBMVC)
 public class HexagonalArchApiApplication {
 
