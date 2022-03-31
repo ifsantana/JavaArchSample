@@ -19,7 +19,7 @@ public class CreateUserCommandHandler implements CommandHandler<CreateUserComman
   }
 
   @Override
-  public Tuple2<Boolean, UserCreatedEvent> onApplicationCommand(CreateUserCommand createUserCommand) {
+  public Tuple2<Boolean, UserCreatedEvent> handle(CreateUserCommand createUserCommand) {
     return this.createUserUseCase.execute(createUserCommand.getUser());
   }
 }

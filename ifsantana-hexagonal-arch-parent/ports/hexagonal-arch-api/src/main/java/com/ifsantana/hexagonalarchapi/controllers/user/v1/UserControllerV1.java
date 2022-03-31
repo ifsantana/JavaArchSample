@@ -7,6 +7,7 @@ import com.ifsantana.hexagonalarchapi.controllers.user.v1.requests.CreateUserReq
 import com.ifsantana.hexagonalarchapi.controllers.user.v1.requests.UpdateUserRequest;
 import com.ifsantana.hexagonalarchapi.controllers.user.v1.responses.CreateUserResponse;
 import internal.v1.commands.CreateUserCommand;
+import internal.v1.commands.DeleteUserCommand;
 import internal.v1.commands.models.NewUser;
 import io.swagger.v3.oas.annotations.Operation;
 import java.net.URI;
@@ -71,6 +72,7 @@ public class UserControllerV1 {
   @Operation(operationId = "delete-user", tags = {"users"})
   @DeleteMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
   public HttpStatus deleteUser(@PathVariable Long id) {
+    this.inMemoryBus.publishEvent(new DeleteUserCommand(new NewUser("admin@admin.com")));
     return HttpStatus.OK;
   }
 }
