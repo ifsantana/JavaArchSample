@@ -3,7 +3,7 @@ package com.ifsantana.hexagonal.application.handlers.commands;
 import com.ifsantana.hexagonal.application.usecases.users.DeleteUserUseCase;
 import com.ifsantana.hexagonal.crosscutting.bus.CommandHandler;
 import external.v1.events.UserDeletedEvent;
-import internal.v1.commands.DeleteUserCommand;
+import internal.v1.commands.deleteUser.DeleteUserCommand;
 import io.vavr.Tuple2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

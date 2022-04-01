@@ -9,15 +9,5 @@ public abstract class EventHandler<TEvent extends ApplicationEvent>
     implements ApplicationListener<TEvent>  {
 
   @Override
-  public void onApplicationEvent(TEvent event) {
-
-  }
-
-  public class Test extends EventHandler<Event> {
-
-    @Override
-    public void onApplicationEvent(Event event) {
-      super.onApplicationEvent(event);
-    }
-  }
+  public void onApplicationEvent(TEvent event) { }
 }

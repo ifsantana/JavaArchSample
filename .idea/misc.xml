@@ -6,6 +6,7 @@
         <option value="$PROJECT_DIR$/ports/listeners/pom.xml" />
         <option value="$PROJECT_DIR$/ifsantana-hexagonal-arch-parent/pom.xml" />
         <option value="$PROJECT_DIR$/ifsantana-hexagonal-arch-parent/hexagonal-arch-api/pom.xml" />
+        <option value="$PROJECT_DIR$/ifsantana-hexagonal-arch-parent/common/hexagonal-arch-cross-cutting-ioc/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
