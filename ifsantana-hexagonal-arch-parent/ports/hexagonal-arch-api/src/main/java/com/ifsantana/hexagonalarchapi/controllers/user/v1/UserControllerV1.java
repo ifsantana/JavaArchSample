@@ -53,7 +53,7 @@ public class UserControllerV1 {
   @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
   public ResponseEntity createUser(@RequestBody CreateUserRequest request) throws URISyntaxException {
 
-    this.inMemoryBus.publishEvent(new CreateUserCommand(new NewUser("admin@admin.com")));
+    this.inMemoryBus.publishEvent(new CreateUserCommand(new NewUser(request.getEmail())));
 
     return ResponseEntity.status(HttpStatus.CREATED)
         .location(new URI(linkTo(UserControllerV1.class)

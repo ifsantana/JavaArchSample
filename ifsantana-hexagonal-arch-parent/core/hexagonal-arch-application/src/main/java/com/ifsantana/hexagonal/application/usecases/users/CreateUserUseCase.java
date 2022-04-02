@@ -19,7 +19,8 @@ public class CreateUserUseCase {
   }
 
   public Tuple2<Boolean, UserCreatedEvent> execute(NewUser user) {
-      var success = this.userService.addUser(new User(1L, user.getEmail()));
-      return new Tuple2<>(success, new UserCreatedEvent("admin@admin.com"));
+      var newUser = new User(null, user.getEmail());
+      var success = this.userService.addUser(newUser);
+      return new Tuple2<>(success, new UserCreatedEvent(newUser.getId(), newUser.getEmail()));
   }
 }

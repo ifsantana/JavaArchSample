@@ -8,5 +8,6 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 public class UserCreatedEvent {
+  private Long id;
   private String email;
 }
