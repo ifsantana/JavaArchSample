@@ -2,7 +2,7 @@ package com.ifsantana.hexagonal.application.usecases.users;
 
 import com.ifsantana.hexagonal.domain.models.User;
 import com.ifsantana.hexagonal.domain.services.UserService;
-import external.v1.events.UserCreatedEvent;
+import internal.v1.commands.createUser.CreateUserCommandResponse;
 import internal.v1.commands.models.NewUser;
 import io.vavr.Tuple2;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,9 +18,9 @@ public class CreateUserUseCase {
     this.userService = userService;
   }
 
-  public Tuple2<Boolean, UserCreatedEvent> execute(NewUser user) {
-      var newUser = new User(null, user.getEmail());
+  public Tuple2<Boolean, CreateUserCommandResponse> execute(NewUser user) {
+      var newUser = new User(user.getId(), user.getEmail());
       var success = this.userService.addUser(newUser);
-      return new Tuple2<>(success, new UserCreatedEvent(newUser.getId(), newUser.getEmail()));
+      return new Tuple2<>(success._1(), success._2());
   }
 }

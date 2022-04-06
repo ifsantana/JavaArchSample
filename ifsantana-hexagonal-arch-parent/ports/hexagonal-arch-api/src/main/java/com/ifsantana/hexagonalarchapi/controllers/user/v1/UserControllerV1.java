@@ -2,6 +2,7 @@ package com.ifsantana.hexagonalarchapi.controllers.user.v1;
 
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
 
+import com.ifsantana.hexagonal.application.handlers.commands.CreateUserCommandHandler;
 import com.ifsantana.hexagonal.crosscutting.bus.InMemoryBus;
 import com.ifsantana.hexagonalarchapi.controllers.user.v1.requests.CreateUserRequest;
 import com.ifsantana.hexagonalarchapi.controllers.user.v1.requests.UpdateUserRequest;
@@ -29,11 +30,16 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/v1/users")
 public class UserControllerV1 {
 
+  @Autowired
+  private final CreateUserCommandHandler createUserCommandHandler;
   private final InMemoryBus inMemoryBus;
   public CreateUserResponse response = new CreateUserResponse(9877654L);
 
   @Autowired
-  public UserControllerV1(InMemoryBus inMemoryBus) {
+  public UserControllerV1(
+      CreateUserCommandHandler createUserCommandHandler,
+      InMemoryBus inMemoryBus) {
+    this.createUserCommandHandler = createUserCommandHandler;
     this.inMemoryBus = inMemoryBus;
   }
 
@@ -53,13 +59,17 @@ public class UserControllerV1 {
   @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
   public ResponseEntity createUser(@RequestBody CreateUserRequest request) throws URISyntaxException {
 
-    this.inMemoryBus.publishEvent(new CreateUserCommand(new NewUser(request.getEmail())));
+    //this.inMemoryBus.publishEvent(new CreateUserCommand(new NewUser(request.getEmail())));
+    var createdUser = this.createUserCommandHandler.handle(new CreateUserCommand(new NewUser(request.getEmail())));
 
-    return ResponseEntity.status(HttpStatus.CREATED)
-        .location(new URI(linkTo(UserControllerV1.class)
-            .slash(this.response.getId()).withSelfRel()
-            .getHref()))
-        .body(this.response);
+    if(createdUser._1()) {
+      return ResponseEntity.status(HttpStatus.CREATED)
+          .location(new URI(linkTo(UserControllerV1.class)
+              .slash(createdUser._2().getUser().getId()).withSelfRel()
+              .getHref()))
+          .body(createdUser._2().getUser());
+    }
+    return ResponseEntity.status(HttpStatus.UNPROCESSABLE_ENTITY).build();
   }
 
   @Operation(operationId = "update-user", tags = {"users"})
