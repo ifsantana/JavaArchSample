@@ -1,7 +1,6 @@
 package com.ifsantana.hexagonal.application.handlers.commands;
 
 import com.ifsantana.hexagonal.crosscutting.bus.CommandHandler;
-import external.v1.events.UserCreatedEvent;
 import internal.v1.commands.createUser.CreateUserCommand;
 import internal.v1.commands.createUser.CreateUserCommandResponse;
 import io.vavr.Tuple2;

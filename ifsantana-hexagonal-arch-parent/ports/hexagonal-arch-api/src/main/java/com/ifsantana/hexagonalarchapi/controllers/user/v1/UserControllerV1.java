@@ -3,12 +3,10 @@ package com.ifsantana.hexagonalarchapi.controllers.user.v1;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
 
 import com.ifsantana.hexagonal.application.handlers.commands.CreateUserCommandHandler;
-import com.ifsantana.hexagonal.crosscutting.bus.InMemoryBus;
 import com.ifsantana.hexagonalarchapi.controllers.user.v1.requests.CreateUserRequest;
 import com.ifsantana.hexagonalarchapi.controllers.user.v1.requests.UpdateUserRequest;
-import com.ifsantana.hexagonalarchapi.controllers.user.v1.responses.CreateUserResponse;
+import com.ifsantana.hexagonalarchapi.controllers.user.v1.responses.GetUserResponse;
 import internal.v1.commands.createUser.CreateUserCommand;
-import internal.v1.commands.deleteUser.DeleteUserCommand;
 import internal.v1.commands.models.NewUser;
 import io.swagger.v3.oas.annotations.Operation;
 import java.net.URI;
@@ -30,17 +28,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/v1/users")
 public class UserControllerV1 {
 
-  @Autowired
   private final CreateUserCommandHandler createUserCommandHandler;
-  private final InMemoryBus inMemoryBus;
-  public CreateUserResponse response = new CreateUserResponse(9877654L);
 
   @Autowired
-  public UserControllerV1(
-      CreateUserCommandHandler createUserCommandHandler,
-      InMemoryBus inMemoryBus) {
+  public UserControllerV1(CreateUserCommandHandler createUserCommandHandler) {
     this.createUserCommandHandler = createUserCommandHandler;
-    this.inMemoryBus = inMemoryBus;
   }
 
   @Operation(operationId = "get-users", tags = {"users"})
@@ -52,14 +44,13 @@ public class UserControllerV1 {
   @Operation(operationId = "get-users", tags = {"users"})
   @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
   public ResponseEntity getUser(@PathVariable Long id) {
-    return ResponseEntity.status(HttpStatus.OK).body(this.response);
+    return ResponseEntity.status(HttpStatus.OK).body(new GetUserResponse());
   }
 
   @Operation(operationId = "create-user", tags = {"users"})
   @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
   public ResponseEntity createUser(@RequestBody CreateUserRequest request) throws URISyntaxException {
 
-    //this.inMemoryBus.publishEvent(new CreateUserCommand(new NewUser(request.getEmail())));
     var createdUser = this.createUserCommandHandler.handle(new CreateUserCommand(new NewUser(request.getEmail())));
 
     if(createdUser._1()) {
@@ -81,7 +72,6 @@ public class UserControllerV1 {
   @Operation(operationId = "delete-user", tags = {"users"})
   @DeleteMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
   public HttpStatus deleteUser(@PathVariable Long id) {
-    this.inMemoryBus.publishEvent(new DeleteUserCommand(new NewUser("admin@admin.com")));
     return HttpStatus.OK;
   }
 }
