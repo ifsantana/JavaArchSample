@@ -90,14 +90,20 @@
       <artifactId>hexagonal-arch-domain</artifactId>
       <version>1.0-SNAPSHOT</version>
     </dependency>
-    <dependency>
-      <groupId>com.ifsantana</groupId>
-      <artifactId>hexagonal-arch-mongodb</artifactId>
-      <version>1.0-SNAPSHOT</version>
-    </dependency>
+<!--    <dependency>-->
+<!--      <groupId>com.ifsantana</groupId>-->
+<!--      <artifactId>hexagonal-arch-mongodb</artifactId>-->
+<!--      <version>1.0-SNAPSHOT</version>-->
+<!--    </dependency>-->
     <dependency>
       <groupId>com.ifsantana</groupId>
       <artifactId>hexagonal-arch-messages</artifactId>
+      <version>1.0-SNAPSHOT</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.ifsantana</groupId>
+      <artifactId>hexagonal-arch-com.ifsantana.hexagonal.crosscutting.bus-listeners</artifactId>
       <version>1.0-SNAPSHOT</version>
       <scope>compile</scope>
     </dependency>

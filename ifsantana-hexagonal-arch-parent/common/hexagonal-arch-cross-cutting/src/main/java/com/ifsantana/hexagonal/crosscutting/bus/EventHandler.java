@@ -1,12 +1,12 @@
 package com.ifsantana.hexagonal.crosscutting.bus;
 
 import org.springframework.context.ApplicationEvent;
-import org.springframework.context.ApplicationListener;
+import org.springframework.context.event.EventListener;
+import org.springframework.stereotype.Component;
 
-@FunctionalInterface
-public interface EventHandler<TEvent extends ApplicationEvent>
-    extends ApplicationListener<TEvent>  {
+@Component
+public interface EventHandler<TEvent extends ApplicationEvent> {
 
-  @Override
+  @EventListener
   void onApplicationEvent(TEvent event);
 }
