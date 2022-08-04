@@ -12,12 +12,8 @@ import com.ifsantana.hexagonal.application.usecases.users.CreateUserUseCase;
 public class CreateUserCommandHandler implements
     CommandHandler<CreateUserCommand, Tuple2<Boolean, CreateUserCommandResponse>> {
 
-  private final CreateUserUseCase createUserUseCase;
-
   @Autowired
-  public CreateUserCommandHandler(CreateUserUseCase createUserUseCase) {
-    this.createUserUseCase = createUserUseCase;
-  }
+  private CreateUserUseCase createUserUseCase;
 
   @Override
   public Tuple2<Boolean, CreateUserCommandResponse> handle(CreateUserCommand createUserCommand) {

@@ -28,12 +28,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/v1/users")
 public class UserControllerV1 {
 
-  private final CreateUserCommandHandler createUserCommandHandler;
-
   @Autowired
-  public UserControllerV1(CreateUserCommandHandler createUserCommandHandler) {
-    this.createUserCommandHandler = createUserCommandHandler;
-  }
+  private CreateUserCommandHandler createUserCommandHandler;
 
   @Operation(operationId = "get-users", tags = {"users"})
   @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
