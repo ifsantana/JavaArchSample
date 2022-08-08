@@ -12,15 +12,11 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class CreateUserUseCase {
-  private final InMemoryBus inMemoryBus;
-  private final UserService userService;
 
   @Autowired
-  public CreateUserUseCase(InMemoryBus inMemoryBus,
-      UserService userService) {
-    this.inMemoryBus = inMemoryBus;
-    this.userService = userService;
-  }
+  private InMemoryBus inMemoryBus;
+  @Autowired
+  private UserService userService;
 
   public Tuple2<Boolean, CreateUserCommandResponse> execute(NewUser user) {
       var result = this.userService.addUser(new User(user.getId(), user.getEmail()));

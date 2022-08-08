@@ -1,17 +1,15 @@
-package com.ifsantana.hexagonalarchapi;
+package com.ifsantana.hexagonal.crosscutting.ioc;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.PropertySource;
 import org.springframework.hateoas.config.EnableHypermediaSupport;
 import org.springframework.hateoas.config.EnableHypermediaSupport.HypermediaType;
 import org.springframework.hateoas.support.WebStack;
 
-@SpringBootApplication(scanBasePackages = {"com.ifsantana.*"})
-@PropertySource(value = {"classpath:application-api.properties"})
+@SpringBootApplication(scanBasePackages = "com.ifsantana.*")
 @EnableHypermediaSupport(type = HypermediaType.HAL, stacks = WebStack.WEBMVC)
-public class HexagonalArchApiApplication {
+public class HexagonalArchApplicationLauncher {
   public static void main(String[] args) {
-    SpringApplication.run(HexagonalArchApiApplication.class, args);
+    SpringApplication.run(HexagonalArchApplicationLauncher.class, args);
   }
 }

@@ -14,12 +14,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class SequenceGeneratorService {
 
-  private final MongoOperations mongoOperations;
-
   @Autowired
-  public SequenceGeneratorService(MongoOperations mongoOperations) {
-    this.mongoOperations = mongoOperations;
-  }
+  private MongoOperations mongoOperations;
 
   public long generateSequence(String seqName) {
 
@@ -27,6 +23,5 @@ public class SequenceGeneratorService {
         new Update().inc("seq",1), options().returnNew(true).upsert(true),
         DatabaseSequence.class);
     return !Objects.isNull(counter) ? counter.getSeq() : 1;
-
   }
 }
