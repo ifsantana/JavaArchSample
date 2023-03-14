@@ -12,6 +12,6 @@ public class MongockSuccessEventListener implements
 
   @Override
   public void onApplicationEvent(SpringMigrationSuccessEvent event) {
-    log.info("[EVENT LISTENER] - Mongock finished successfully: {}", event);
+    log.debug("[EVENT LISTENER] - Mongock finished successfully: {}", event);
   }
 }

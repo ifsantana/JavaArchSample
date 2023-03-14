@@ -29,7 +29,7 @@ public class InitializerSystemMigration {
 
   @RollbackBeforeExecution
   public void rollbackBeforeExecution() {
-
+    template.dropCollection(USERS_COLLECTION);
   }
 
   @Execution
