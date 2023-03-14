@@ -12,6 +12,6 @@ public class MongockFailEventListener implements
 
   @Override
   public void onApplicationEvent(SpringMigrationFailureEvent event) {
-    log.info("[EVENT LISTENER] - Mongock finished with failures: {}", event.getMigrationResult());
+    log.debug("[EVENT LISTENER] - Mongock finished with failures: {}", event.getMigrationResult());
   }
 }
