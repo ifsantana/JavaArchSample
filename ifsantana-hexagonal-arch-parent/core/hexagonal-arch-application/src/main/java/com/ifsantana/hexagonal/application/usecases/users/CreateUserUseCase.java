@@ -12,7 +12,6 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class CreateUserUseCase {
-
   @Autowired
   private InMemoryBus inMemoryBus;
   @Autowired
