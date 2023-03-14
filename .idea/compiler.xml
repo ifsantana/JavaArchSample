@@ -17,15 +17,14 @@
         <module name="hexagonal-arch-external-api-client" />
         <module name="hexagonal-arch-pgsql" />
         <module name="hexagonal-arch-cross-cutting" />
+        <module name="hexagonal-arch-bus-listeners" />
         <module name="hexagonal-arch-domain" />
         <module name="hexagonal-arch-cross-cutting-ioc" />
-        <module name="hexagonal-arch-com.ifsantana.hexagonal.crosscutting.bus-listeners" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="api" target="17" />
       <module name="hexagonal-arch-" target="17" />
-      <module name="hexagonal-arch-bus-listeners" target="17" />
       <module name="hexagonal-ports-adapters" target="17" />
       <module name="listeners" target="17" />
     </bytecodeTargetLevel>
