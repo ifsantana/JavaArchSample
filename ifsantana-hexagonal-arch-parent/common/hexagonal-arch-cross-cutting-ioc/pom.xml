@@ -52,7 +52,13 @@
     </dependency>
     <dependency>
       <groupId>com.ifsantana</groupId>
-      <artifactId>hexagonal-arch-com.ifsantana.hexagonal.crosscutting.bus-listeners</artifactId>
+      <artifactId>hexagonal-arch-cross-cutting</artifactId>
+      <version>1.0-SNAPSHOT</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.ifsantana</groupId>
+      <artifactId>hexagonal-arch-bus-listeners</artifactId>
       <version>1.0-SNAPSHOT</version>
       <scope>compile</scope>
     </dependency>
