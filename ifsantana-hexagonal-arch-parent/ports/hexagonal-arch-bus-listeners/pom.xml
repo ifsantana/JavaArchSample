@@ -9,7 +9,7 @@
   </parent>
   <modelVersion>4.0.0</modelVersion>
 
-  <artifactId>hexagonal-arch-com.ifsantana.hexagonal.crosscutting.bus-listeners</artifactId>
+  <artifactId>hexagonal-arch-bus-listeners</artifactId>
 
   <properties>
     <maven.compiler.source>17</maven.compiler.source>
