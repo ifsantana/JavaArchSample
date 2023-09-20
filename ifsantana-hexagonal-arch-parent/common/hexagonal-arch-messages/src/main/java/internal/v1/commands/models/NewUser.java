@@ -16,4 +16,8 @@ public class NewUser {
   public NewUser(String email) {
     this.email = email;
   }
+
+  public NewUser(long id) {
+    this.id = id;
+  }
 }

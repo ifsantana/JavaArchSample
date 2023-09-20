@@ -8,7 +8,7 @@ import io.vavr.Tuple2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-@Service
+@Service("DeleteUserCommand")
 public class DeleteUserCommandHandler implements
     CommandHandler<DeleteUserCommand, Tuple2<Boolean, UserDeletedEvent>> {
 

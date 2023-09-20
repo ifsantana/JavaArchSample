@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.ifsantana.hexagonal.application.usecases.users.CreateUserUseCase;
 
-@Service
+@Service("CreateUserCommand")
 public class CreateUserCommandHandler implements
     CommandHandler<CreateUserCommand, Tuple2<Boolean, CreateUserCommandResponse>> {
 
